@@ -23,13 +23,13 @@ class NameWidget extends StatelessWidget {
             children: [
               DelayedWidget(
                 animationDuration: const Duration(milliseconds: 700),
-                child: const Text("Vignnesh Ravindran", style: TextStyle(fontFamily: 'Valencia', fontSize: 100), textAlign: TextAlign.center)
+                child: Text("Vignnesh Ravindran", style: TextStyle(fontFamily: 'Valencia', fontSize: width < 500 ? 80 : 100), textAlign: TextAlign.center, maxLines: 1,)
               ),
               const SizedBox(height: 20.0),
               DelayedWidget(
                 delayDuration: const Duration(milliseconds: 700),
                 animationDuration: const Duration(milliseconds: 700),
-                child: const Text("Mobile & Web Application Developer", style: TextStyle(fontFamily: 'Metropolis-Regular', fontSize: 28, fontWeight: FontWeight.w500), textAlign: TextAlign.center)
+                child: Text("Mobile & Web Application Developer", style: TextStyle(fontFamily: 'Metropolis-Regular', fontSize: width < 500 ? 20 : 28, fontWeight: FontWeight.w500), textAlign: TextAlign.center, maxLines: 1,)
               ),
             ],
           ),

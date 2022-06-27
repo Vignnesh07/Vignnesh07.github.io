@@ -21,14 +21,14 @@ class AboutMeWidget extends StatelessWidget {
           Obx(() => AnimatedPositionedDirectional(
             curve: Curves.linearToEaseOut,
             duration: const Duration(milliseconds: 500),
-            start: nameWidgetController.nameWidgetOffset.value - height / 1.5,
-            child: const Text(
+            start: width < 1700 ? (nameWidgetController.nameWidgetOffset.value - height) : (nameWidgetController.nameWidgetOffset.value - height / 1.5),
+            child: Text(
               "ABOUT ME", 
               style: TextStyle(
-                fontSize: 180, 
+                fontSize: width < 600 ? 100 : 180, 
                 fontFamily: 'Metropolis', 
                 fontWeight: FontWeight.w700, 
-                color: Color.fromRGBO(238, 238, 238, 1),
+                color: const Color.fromRGBO(238, 238, 238, 1),
               ),
             ),
           ),),
@@ -37,10 +37,10 @@ class AboutMeWidget extends StatelessWidget {
             child: Container(
               color: Colors.transparent,
               width: width / 2,
-              child: const Text(
+              child: Text(
                 "A passionate full-stack web & mobile application developer and a final year software enginering student.",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: width < 600 ? 28 : 30,
                   fontFamily: 'Metropolis', 
                   fontWeight: FontWeight.w300, 
                 ),
