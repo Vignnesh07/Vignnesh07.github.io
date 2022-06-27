@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../constants/controllers.dart';
 
@@ -25,7 +26,13 @@ class AboutMeWidget extends StatelessWidget {
             child: Text(
               "ABOUT ME", 
               style: TextStyle(
-                fontSize: width < 600 ? 100 : 180, 
+                fontSize: ResponsiveValue(
+                  context, 
+                  defaultValue: 180.0, 
+                  valueWhen: const [
+                    Condition.smallerThan(name: DESKTOP, value: 100.0),
+                  ]
+                ).value,
                 fontFamily: 'Metropolis', 
                 fontWeight: FontWeight.w700, 
                 color: const Color.fromRGBO(238, 238, 238, 1),
@@ -40,7 +47,13 @@ class AboutMeWidget extends StatelessWidget {
               child: Text(
                 "A passionate full-stack web & mobile application developer and a final year software enginering student.",
                 style: TextStyle(
-                  fontSize: width < 600 ? 28 : 30,
+                  fontSize: ResponsiveValue(
+                    context, 
+                    defaultValue: 30.0, 
+                    valueWhen: const [
+                      Condition.smallerThan(name: DESKTOP, value: 18.0),
+                    ]
+                  ).value,
                   fontFamily: 'Metropolis', 
                   fontWeight: FontWeight.w300, 
                 ),
