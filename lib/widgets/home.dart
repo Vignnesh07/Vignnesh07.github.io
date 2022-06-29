@@ -4,6 +4,7 @@ import '../constants/controllers.dart';
 import '../utils/no_scroll_glow.dart';
 import 'about_me.dart';
 import 'name.dart';
+import 'project1.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -22,11 +23,14 @@ class HomeWidget extends StatelessWidget {
             children: <Widget> [
               const NameWidget(),
               SingleChildScrollView(
+                // controller: nameWidgetController.scrollController,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: height),
                     const AboutMeWidget(),
+                    const Divider(height: 1.0, color: Colors.black,),
+                    const Project1Widget(),
                     Container(
                       height: height,
                       width: width,
