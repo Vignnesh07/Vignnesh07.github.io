@@ -42,11 +42,11 @@ class Project1Widget extends StatelessWidget {
               shrinkWrap: true,
               padding: const EdgeInsets.all(0),
               physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (_, __) => const SizedBox(height: 10.0), 
+              separatorBuilder: (_, __) => const SizedBox(height: 5.0), 
               itemCount: nameWidgetController.projectList.length,
               itemBuilder: (context, index) {
                 return SizedBox(
-                  height: height * index,
+                  height: index == 1 ? height / 2 * (index + 1) : index == 2 ? height / 7 * (index + 1) : height * (index + 1),
                   child: Stack(
                     clipBehavior: Clip.none,
                     alignment: Alignment.topCenter,
@@ -55,7 +55,7 @@ class Project1Widget extends StatelessWidget {
                         curve: Curves.linearToEaseOut,
                         duration: const Duration(milliseconds: 500),
                         start: -30.0,
-                        bottom: index == 0 ? nameWidgetController.nameWidgetOffset.value - height / 1.90 : index == 1 ? nameWidgetController.nameWidgetOffset.value + height * 3 : nameWidgetController.nameWidgetOffset.value + height * 4,
+                        bottom: index == 0 ? nameWidgetController.nameWidgetOffset.value - height * (index + 2.22) : index == 1 ? nameWidgetController.nameWidgetOffset.value - height * (index + 2.00) : nameWidgetController.nameWidgetOffset.value - height * (index + 2.45),
                         child: Container(
                           height: height / 1.55,
                           width: 500,
@@ -75,7 +75,7 @@ class Project1Widget extends StatelessWidget {
                         curve: Curves.linearToEaseOut,
                         duration: const Duration(milliseconds: 300),
                         start: 30.0,
-                        bottom: nameWidgetController.nameWidgetOffset.value - height * 2 * (index + 1),
+                        bottom: index == 0 ? nameWidgetController.nameWidgetOffset.value - height * (index + 1.60) : index == 1 ? nameWidgetController.nameWidgetOffset.value - height * (index + 1.40) : nameWidgetController.nameWidgetOffset.value - height * (index + 1.85),
                         child: Container(
                           height: height / 1.13,
                           width: 500,
@@ -89,7 +89,7 @@ class Project1Widget extends StatelessWidget {
                         curve: Curves.linearToEaseOut,
                         duration: const Duration(milliseconds: 500),
                         end: -50.0,
-                        bottom: nameWidgetController.nameWidgetOffset.value - height / 2.00,
+                        bottom: index == 0 ? nameWidgetController.nameWidgetOffset.value - height * (index + 2.20) : index == 1 ? nameWidgetController.nameWidgetOffset.value - height * (index + 2.00) : nameWidgetController.nameWidgetOffset.value - height * (index + 2.48),
                         child: Container(
                           height: height / 1.75,
                           width: 500,
@@ -103,7 +103,7 @@ class Project1Widget extends StatelessWidget {
                         curve: Curves.linearToEaseOut,
                         duration: const Duration(milliseconds: 500),
                         end: 30.0,
-                        bottom: nameWidgetController.nameWidgetOffset.value + height * 0.05,
+                        bottom: index == 0 ? nameWidgetController.nameWidgetOffset.value - height * (index + 1.65) : index == 1 ? nameWidgetController.nameWidgetOffset.value - height * (index + 1.45) : nameWidgetController.nameWidgetOffset.value - height * (index + 1.95),
                         child: Container(
                           alignment: Alignment.topRight,
                           height: height / 1.27,
