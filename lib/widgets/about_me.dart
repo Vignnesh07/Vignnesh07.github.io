@@ -43,7 +43,7 @@ class AboutMeWidget extends StatelessWidget {
                     Condition.smallerThan(name: DESKTOP, value: 100.0),
                   ]
                 ).value,
-                fontFamily: 'Metropolis', 
+                fontFamily: 'Avenir-Heavy', 
                 fontWeight: FontWeight.w700, 
                 color: const Color.fromRGBO(238, 238, 238, 1),
               ),
@@ -64,7 +64,7 @@ class AboutMeWidget extends StatelessWidget {
                       Condition.smallerThan(name: DESKTOP, value: 18.0),
                     ]
                   ).value,
-                  fontFamily: 'Metropolis', 
+                  fontFamily: 'Avenir-Light', 
                   fontWeight: FontWeight.w300, 
                 ),
                 textAlign: TextAlign.left,

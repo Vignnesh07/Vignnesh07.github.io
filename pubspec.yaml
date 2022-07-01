@@ -85,19 +85,40 @@ flutter:
   fonts:
     - family: Valencia
       fonts:
-        - asset: assets/fonts/Valencia.ttf
-    - family: Metropolis
+        - asset: assets/fonts/valencia/Valencia.ttf
+    - family: Avenir-Book
       fonts:
-        - asset: assets/fonts/Metropolis-Light.otf
-          weight: 300
-        - asset: assets/fonts/Metropolis-Regular.otf
-        - asset: assets/fonts/Metropolis-SemiBold.otf
-          weight: 700
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+        - asset: assets/fonts/avenir/Avenir-Book-01.ttf
+    - family: Avenir-BookOblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-BookOblique-02.ttf
+    - family: Avenir-Black
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Black-03.ttf
+    - family: Avenir-BlackOblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-BlackOblique-04.ttf
+    - family: Avenir-Heavy
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Heavy-05.ttf
+    - family: Avenir-HeavyOblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-HeavyOblique-06.ttf
+    - family: Avenir-Light
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Light-07.ttf
+    - family: Avenir-LightOblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-LightOblique-08.ttf
+    - family: Avenir-Medium
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Medium-09.ttf
+    - family: Avenir-MediumOblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-MediumOblique-10.ttf
+    - family: Avenir-Oblique
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Oblique-11.ttf
+    - family: Avenir-Roman
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Roman-12.ttf

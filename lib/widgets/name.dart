@@ -47,7 +47,7 @@ class NameWidget extends StatelessWidget {
                 child: Text(
                   "Mobile & Web Application Developer", 
                   style: TextStyle(
-                    fontFamily: 'Metropolis-Regular',
+                    fontFamily: 'Avenir-Roman',
                     fontSize: ResponsiveValue(
                       context, 
                       defaultValue: 28.0, 
@@ -55,7 +55,6 @@ class NameWidget extends StatelessWidget {
                         Condition.smallerThan(breakpoint: 500, value: 20.0),
                       ]
                     ).value,
-                    fontWeight: FontWeight.w500
                   ), 
                   textAlign: TextAlign.center,
                   maxLines: 1,
