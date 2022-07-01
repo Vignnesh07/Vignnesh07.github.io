@@ -8,6 +8,7 @@ import 'controllers/name_widget_controller.dart';
 import 'widgets/home.dart';
 
 void main() {
+  
   Get.put<NameWidgetController>(NameWidgetController());
   runApp(const MyApp());
 }
