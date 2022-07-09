@@ -5,14 +5,12 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 import '../constants/controllers.dart';
 
-class Project1Widget extends StatelessWidget {
-  const Project1Widget({Key? key}) : super(key: key);
+class ProjectsWidget extends StatelessWidget {
+  const ProjectsWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -122,8 +120,9 @@ class Project1Widget extends StatelessWidget {
                   child: NotificationListener<ScrollNotification>(
                     onNotification: nameWidgetController.updateNameOffset,
                     child: SingleChildScrollView(
+                      primary: false,
                       child: SizedBox(
-                        height: height * (nameWidgetController.projectList.length + 2.4),
+                        height: height * (nameWidgetController.projectList.length + 1.0),
                         child: ListView.separated(
                           shrinkWrap: true,
                           controller: nameWidgetController.projectsScrollController,
@@ -151,7 +150,7 @@ class Project1Widget extends StatelessWidget {
                                         image: DecorationImage(image: AssetImage(nameWidgetController.projectList[index].picUrl[2]), fit: BoxFit.scaleDown)
                                       ),
                                       child: BackdropFilter(
-                                        filter: ImageFilter.blur(sigmaX: 0.1, sigmaY: 0.1),
+                                        filter: ImageFilter.blur(sigmaX: 0.3, sigmaY: 0.3),
                                         child: Container(
                                           decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
                                         ),
@@ -184,6 +183,12 @@ class Project1Widget extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         image: DecorationImage(image: AssetImage(nameWidgetController.projectList[index].picUrl[3]), fit: BoxFit.scaleDown)
                                       ),
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(sigmaX: 0.4, sigmaY: 0.4),
+                                        child: Container(
+                                          decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+                                        ),
+                                      ),
                                     ),
                                   ),),
                                   Obx(() => AnimatedPositionedDirectional(
@@ -198,6 +203,12 @@ class Project1Widget extends StatelessWidget {
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         image: DecorationImage(image: AssetImage(nameWidgetController.projectList[index].picUrl[1]), fit: BoxFit.scaleDown, alignment: Alignment.topRight,)
+                                      ),
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(sigmaX: 0.2, sigmaY: 0.2),
+                                        child: Container(
+                                          decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+                                        ),
                                       ),
                                     ),
                                   ),),
