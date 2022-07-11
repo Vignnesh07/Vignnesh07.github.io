@@ -14,7 +14,7 @@ class NameWidget extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Obx(() => Positioned(
-      top: -.50 * nameWidgetController.nameScrollOffset.value,
+      top: -.50 * nameWidgetController.mainScrollOffset.value,
       child: Center(
         child: SizedBox(
           height: height,

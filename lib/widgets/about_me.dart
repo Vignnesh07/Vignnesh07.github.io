@@ -24,13 +24,13 @@ class AboutMeWidget extends StatelessWidget {
             duration: const Duration(milliseconds: 500),
             start: ResponsiveValue(
               context,
-              defaultValue: nameWidgetController.nameScrollOffset.value - height / 1.6,
+              defaultValue: nameWidgetController.mainScrollOffset.value - height / 1.6,
               valueWhen: [
-                Condition.smallerThan(breakpoint: 1500, value: nameWidgetController.nameScrollOffset.value - height / 1.4),
-                Condition.smallerThan(breakpoint: 1400, value: nameWidgetController.nameScrollOffset.value - height / 1.3),
-                Condition.smallerThan(breakpoint: 1300, value: nameWidgetController.nameScrollOffset.value - height / 1.2),
-                Condition.smallerThan(breakpoint: 1200, value: nameWidgetController.nameScrollOffset.value - height / 1.08),
-                Condition.smallerThan(breakpoint: 1050, value: nameWidgetController.nameScrollOffset.value - height),
+                Condition.smallerThan(breakpoint: 1500, value: nameWidgetController.mainScrollOffset.value - height / 1.4),
+                Condition.smallerThan(breakpoint: 1400, value: nameWidgetController.mainScrollOffset.value - height / 1.3),
+                Condition.smallerThan(breakpoint: 1300, value: nameWidgetController.mainScrollOffset.value - height / 1.2),
+                Condition.smallerThan(breakpoint: 1200, value: nameWidgetController.mainScrollOffset.value - height / 1.08),
+                Condition.smallerThan(breakpoint: 1050, value: nameWidgetController.mainScrollOffset.value - height),
               ]
             ).value,
             child: Text(

@@ -94,9 +94,7 @@ class ProjectsWidget extends StatelessWidget {
                               ),
                             ),),
                             const Spacer(),
-                            Obx(() => AnimatedContainer(
-                              curve: const Cubic(0.19, 1, 0.22, 1),
-                              duration: const Duration(seconds: 1),
+                            Obx(() => Container(
                               alignment: Alignment.bottomLeft,
                               padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
                               child: Text(
