@@ -52,7 +52,6 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
     mainScrollController = ScrollController()
     ..addListener(() {
       mainScrollOffset.value = mainScrollController.offset;
-      debugPrint("Main Scroll Offset: ${mainScrollOffset.value}");
       mainScrollController.offset > 2500 ? contactAnimationController.forward() : contactAnimationController.reverse();
     });
 

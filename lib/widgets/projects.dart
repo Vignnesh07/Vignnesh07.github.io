@@ -190,7 +190,7 @@ class ProjectsWidget extends StatelessWidget {
                                   ),),
                                   Obx(() => AnimatedPositionedDirectional(
                                     curve: Curves.linearToEaseOut,
-                                    duration: const Duration(milliseconds: 500),
+                                    duration: const Duration(milliseconds: 600),
                                     end: -50.0,
                                     bottom: index == 0 ? nameWidgetController.projectScrollOffset.value - height * (index + 1.45) : index == 1 ? nameWidgetController.projectScrollOffset.value - height * (index + 1.48) : nameWidgetController.projectScrollOffset.value - height * (index + 2.11),
                                     child: Container(
