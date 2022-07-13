@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/widgets/attention_seekers/bounce.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 import '../constants/controllers.dart';
@@ -23,24 +22,24 @@ class SkillsContainerWidget extends StatelessWidget {
       child: Obx(() => nameWidgetController.skillDisplayed.value == skill ? 
         Bounce(
           child: Container(
-            width: 50,
-            height: 50,
+            width: 60,
+            height: 60,
             clipBehavior: Clip.antiAlias,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              image: DecorationImage(image: AssetImage(asset), fit: BoxFit.fill,)
             ),
-            child: SvgPicture.asset(asset, fit: BoxFit.contain, semanticsLabel: skill, height: 50, width: 50,),
           ),
         )
         :
         Container(
-          width: 50,
-          height: 50,
+          width: 60,
+          height: 60,
           clipBehavior: Clip.antiAlias,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            image: DecorationImage(image: AssetImage(asset), fit: BoxFit.fill,)
           ),
-          child: SvgPicture.asset(asset, fit: BoxFit.contain, semanticsLabel: skill, height: 50, width: 50,),
         ),
       ),
     );

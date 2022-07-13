@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart' show defaultTargetPlatform;
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -56,7 +58,7 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
 
     projectsScrollController = ScrollController();
 
-    contactAnimationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 1000));
+    contactAnimationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
 
     nameCtrl = TextEditingController();
     emailCtrl = TextEditingController();
@@ -65,10 +67,43 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
   }
 
   @override
+  void onReady() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      checkPlatform();
+    });
+    super.onReady();
+  }
+
+  @override
   void onClose() {
     mainScrollController.dispose();
     projectsScrollController.dispose();
     super.onClose();
+  }
+
+  // Mobile optimisation notice
+  void checkPlatform(){
+    if (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android) {
+      Get.dialog(
+        Card(
+          color: Colors.white,
+          elevation: 10.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0)
+          ),
+          child: const Center(
+            child: Text(
+              "This web is currently under optimisation for mobile platforms.\nPlease use Google Chrome on your desktop for the best experience. Have a great day! 😁",
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Avenir-Book',
+                color: Color.fromARGB(255, 54, 54, 54),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
   }
 
   // Enables bounce animation uniquely in skills widget  
@@ -112,7 +147,6 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
         "Successfully sent email to Vignnesh", 
         animationDuration: const Duration(seconds: 3),
         backgroundColor: Colors.white12,
-        // maxWidth: Get.context!.size!.width / 1.5,
         snackPosition: SnackPosition.BOTTOM,
         dismissDirection: DismissDirection.horizontal, 
       );
@@ -124,7 +158,7 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
     if (scrollNotification is ScrollStartNotification){
       canScrollSentinel.value = false;
       mainScrollController.animateTo(
-        1508,
+        Get.context!.size!.height * 2,
         duration: const Duration(seconds: 1),
         curve: Curves.easeIn,
       );

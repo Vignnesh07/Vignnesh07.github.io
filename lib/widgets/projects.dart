@@ -55,7 +55,6 @@ class ProjectsWidget extends StatelessWidget {
                             Obx(() => InkWell(
                               canRequestFocus: true,
                               enableFeedback: false,
-                              
                               highlightColor: Colors.transparent,
                               splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,

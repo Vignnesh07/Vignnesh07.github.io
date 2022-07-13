@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/widgets/attention_seekers/bounce.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -43,24 +42,24 @@ class ContactContainerWidget extends StatelessWidget {
         child: nameWidgetController.hoveredContact.value == contact ? 
         Bounce(
           child: Container(
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
             clipBehavior: Clip.antiAlias,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              image: DecorationImage(image: AssetImage(asset), fit: BoxFit.contain,)
             ),
-            child: SvgPicture.asset(asset, fit: BoxFit.contain, semanticsLabel: contact, height: 50, width: 50,),
           ),
         )
         :
         Container(
-          width: 50,
-          height: 50,
+          width: 40,
+          height: 40,
           clipBehavior: Clip.antiAlias,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            image: DecorationImage(image: AssetImage(asset), fit: BoxFit.contain,)
           ),
-          child: SvgPicture.asset(asset, fit: BoxFit.contain, semanticsLabel: contact, height: 50, width: 50,),
         ),
       ),
     ),);

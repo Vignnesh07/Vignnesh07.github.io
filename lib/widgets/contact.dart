@@ -36,7 +36,7 @@ class ContactWidget extends StatelessWidget {
         );
       },
       child: Container(
-        height: height + 90,
+        height: height + 70,
         width: width,
         color: Colors.white,
         child: Stack(
@@ -57,7 +57,7 @@ class ContactWidget extends StatelessWidget {
                   Condition.smallerThan(breakpoint: 1050, value: nameWidgetController.mainScrollOffset.value - height / 0.257),
                 ]
               ).value,
-              child: const ContactContainerWidget(contact: 'LinkedIn', asset: 'assets/images/logos/linkedin.svg',),
+              child: const ContactContainerWidget(contact: 'LinkedIn', asset: 'assets/images/logos/linkedin.png',),
             ),),
             Obx(() => AnimatedPositionedDirectional(
               top: 220,
@@ -74,7 +74,7 @@ class ContactWidget extends StatelessWidget {
                   Condition.smallerThan(breakpoint: 1050, value: nameWidgetController.mainScrollOffset.value - height / 0.257),
                 ]
               ).value,
-              child: const ContactContainerWidget(contact: 'GitHub', asset: 'assets/images/logos/github.svg',),
+              child: const ContactContainerWidget(contact: 'GitHub', asset: 'assets/images/logos/github.png',),
             ),),
             const ContactFormWidget(),
           ],
