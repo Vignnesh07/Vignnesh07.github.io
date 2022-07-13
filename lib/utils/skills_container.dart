@@ -18,8 +18,8 @@ class SkillsContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onEnter: (event) => nameWidgetController.onEntered(skill),
-      onExit: (event) => nameWidgetController.onEntered(''),
+      onEnter: (event) => nameWidgetController.onSkillsHovered(skill),
+      onExit: (event) => nameWidgetController.onSkillsHovered(''),
       child: Obx(() => nameWidgetController.skillDisplayed.value == skill ? 
         Bounce(
           child: Container(

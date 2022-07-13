@@ -21,7 +21,29 @@ class CustomTheme {
         color: Colors.grey,
         thickness: 1.0,
       ),
+      inputDecorationTheme: inputDecorationTheme(),
+      
     );
+  }
+
+  InputDecorationTheme inputDecorationTheme(){
+    const InputDecorationTheme theme = InputDecorationTheme(
+      alignLabelWithHint: true,
+      floatingLabelBehavior: FloatingLabelBehavior.never,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+        borderSide: BorderSide(color: Color.fromARGB(255, 100, 100, 100), width: 1.0),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: Color.fromARGB(255, 50, 115, 220), width: 1.0),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: Colors.red, width: 1.0),
+      ),
+    );
+    return theme;
   }
 
 }

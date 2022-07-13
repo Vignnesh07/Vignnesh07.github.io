@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/controllers.dart';
 
@@ -51,16 +52,35 @@ class ProjectsWidget extends StatelessWidget {
                               ),
                             ),),
                             const SizedBox(height: 60.0),
-                            Obx(() => Container(
-                              alignment: Alignment.centerLeft,
-                              padding: const EdgeInsets.symmetric(horizontal: 65.0),
-                              child: Text(
-                                nameWidgetController.projectList[nameWidgetController.currentlyDisplayed.value].name,
-                                textAlign: TextAlign.left,
-                                style: const TextStyle(
-                                  fontSize: 70,
-                                  color: Color.fromARGB(255, 54, 54, 54),
-                                  fontFamily: 'Avenir-Heavy', 
+                            Obx(() => InkWell(
+                              canRequestFocus: true,
+                              enableFeedback: false,
+                              
+                              highlightColor: Colors.transparent,
+                              splashColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              onTap: () async {
+                                if (await canLaunchUrl(Uri.parse(nameWidgetController.projectList[nameWidgetController.currentlyDisplayed.value].appUrl))){
+                                  await launchUrl(
+                                    Uri.parse(nameWidgetController.projectList[nameWidgetController.currentlyDisplayed.value].appUrl),
+                                    webOnlyWindowName: '_blank',
+                                  );
+                                }
+                              },
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                padding: const EdgeInsets.symmetric(horizontal: 65.0),
+                                child: Text(
+                                  nameWidgetController.projectList[nameWidgetController.currentlyDisplayed.value].name,
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    fontSize: 70,
+                                    color: const Color.fromARGB(255, 54, 54, 54),
+                                    fontFamily: 'Avenir-Heavy', 
+                                    decoration: TextDecoration.underline,
+                                    decorationStyle: TextDecorationStyle.double,
+                                    decorationColor: nameWidgetController.currentlyDisplayed.value == 0 ? Colors.red : nameWidgetController.currentlyDisplayed.value == 1 ? Colors.blue[900] : Colors.green[900],
+                                  ),
                                 ),
                               ),
                             ),),

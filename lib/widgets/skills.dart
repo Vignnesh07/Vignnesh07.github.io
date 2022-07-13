@@ -3,7 +3,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../constants/controllers.dart';
-import 'skills_container.dart';
+import '../utils/skills_container.dart';
 
 class SkillsWidget extends StatelessWidget {
   const SkillsWidget({Key? key}) : super(key: key);
