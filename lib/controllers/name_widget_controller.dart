@@ -84,24 +84,17 @@ class NameWidgetController extends GetxController with GetSingleTickerProviderSt
   // Mobile optimisation notice
   void checkPlatform(){
     if (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android) {
-      Get.dialog(
-        Card(
-          color: Colors.white,
-          elevation: 10.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0)
-          ),
-          child: const Center(
-            child: Text(
-              "This web is currently under optimisation for mobile platforms.\nPlease use Google Chrome on your desktop for the best experience. Have a great day! 😁",
-              softWrap: true,
-              style: TextStyle(
-                fontFamily: 'Avenir-Book',
-                color: Color.fromARGB(255, 54, 54, 54),
-              ),
-            ),
-          ),
+      Get.defaultDialog(
+        title: "Optimisation Notice", 
+        content: const Text(
+          "This web is currently under optimisation for mobile platforms.\nPlease use Google Chrome on your desktop for the best experience. Have a great day! 😁",
+          style: TextStyle(fontFamily: 'Avenir-Book', color: Color.fromARGB(255, 54, 54, 54), fontSize: 14.0),
+          textAlign: TextAlign.center,
         ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        titleStyle: const TextStyle(fontFamily: 'Avenir-Book', color: Color.fromARGB(255, 54, 54, 54), fontWeight: FontWeight.bold, fontSize: 16.0),
+        backgroundColor: Colors.white,
+        titlePadding: const EdgeInsets.symmetric(vertical: 20.0),
       );
     }
   }
